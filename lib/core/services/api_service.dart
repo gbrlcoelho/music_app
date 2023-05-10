@@ -33,5 +33,24 @@ class ApiService extends DioForNative {
     }
   }
 
-  Future<GenreDetailsModel> getGenreDetails({required String genre}) {}
+  Future<GenreDetailsModel> getGenreDetails({required String genre}) async {
+    try {
+      final endPoint = '/genres/$genre';
+
+      final response = await get(endPoint);
+
+      return GenreDetailsModel.fromMap(response.data as Map<String, dynamic>);
+    } on DioError catch (dioError, stackTrace) {
+      log('Erro ao fazer o get dos detalhes do gênero musical',
+          error: dioError, stackTrace: stackTrace);
+      throw ApiException(
+        message: 'Erro ao buscar detalhes do gênero',
+        statusCode: dioError.response?.statusCode,
+      );
+    } catch (error, stackTrace) {
+      log('Erro ao fazer o get dos detalhes do gênero musical',
+          error: error, stackTrace: stackTrace);
+      throw GeneralException();
+    }
+  }
 }
