@@ -1,3 +1,4 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:dio/dio.dart';
 import 'package:get/get.dart';
 import 'package:music_app/core/services/dot_env_service.dart';
@@ -17,7 +18,9 @@ class MusicAppInitialBindings extends Bindings {
       ),
     ));
 
-    Get.put(AudioPlayerServiceImpl());
+    Get.put(AudioPlayerServiceImpl(
+      AudioPlayer(),
+    ));
 
     Get.lazyPut(() => MusicPlayerController());
   }
