@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/core/app/music_app_colors.dart';
 
-class MusicAppTextStyles {
-  MusicAppTextStyles._();
+class MusicAppTextStyle {
+  MusicAppTextStyle._();
 
   static TextStyle get getNormalStyle => TextStyle(
         fontSize: 16,
