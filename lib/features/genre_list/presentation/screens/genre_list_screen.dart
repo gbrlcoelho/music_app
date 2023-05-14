@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:music_app/features/genre_details/presentation/screens/genre_details_screen.dart';
+import 'package:music_app/shared/features/music_player/presentation/widgets/mini_music_player_widget.dart';
 import 'package:music_app/shared/widgets/screen_widget.dart';
 
+import '../../../../shared/features/music_player/presentation/controllers/music_player_controller.dart';
 import '../../../../shared/widgets/img_and_title_row_widget.dart';
 import '../controllers/genre_list_controller.dart';
 
@@ -13,6 +15,7 @@ class GenreListScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final genreListController = Get.find<GenreListController>();
+    final musicPlayerController = Get.find<MusicPlayerController>();
     return Obx(
       () => ScreenWidget(
         isLoading: false,
@@ -42,7 +45,9 @@ class GenreListScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const SizedBox(height: 12)
+            const SizedBox(height: 12),
+            if (musicPlayerController.getPlaylistPlaying.isNotEmpty)
+              const MiniMusicPlayerWidget(),
           ],
         ),
       ),
