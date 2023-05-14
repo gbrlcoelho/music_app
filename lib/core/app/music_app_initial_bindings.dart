@@ -22,6 +22,12 @@ class MusicAppInitialBindings extends Bindings {
       AudioPlayer(),
     ));
 
-    Get.lazyPut(() => MusicPlayerController());
+    Get.lazyPut(
+      () => MusicPlayerController(
+        AudioPlayerServiceImpl(
+          AudioPlayer(),
+        ),
+      ),
+    );
   }
 }
