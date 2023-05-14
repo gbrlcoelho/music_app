@@ -65,7 +65,26 @@ class MiniMusicPlayerWidget extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
+            StreamBuilder(
+              stream: musicPlayerController.getCurrentMusicDurationStream,
+              builder: (_, AsyncSnapshot<Duration> snapshot) {
+                final currentPositionInSeconds = snapshot.data?.inSeconds ??
+                    musicPlayerController.currentMusicDuration.value;
+
+                return LinearProgressIndicator(
+                  value: (currentPositionInSeconds /
+                          (musicPlayerController
+                                  .getCurrentPlayingMusic?.duration ??
+                              0))
+                      .clamp(0, 1),
+                  backgroundColor: Colors.grey.shade600,
+                  valueColor: AlwaysStoppedAnimation<Color>(
+                    MusicAppColors.secondaryColor,
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),
