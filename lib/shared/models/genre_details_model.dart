@@ -14,7 +14,7 @@ class GenreDetailsModel extends GenreModel {
   factory GenreDetailsModel.fromMap(Map<String, dynamic> map) {
     return GenreDetailsModel(
       title: map['title'] ?? '',
-      musics: (['musics'])
+      musics: (map['musics'] as List<dynamic>)
           .map((music) => MusicModel.fromMap(music as Map<String, dynamic>))
           .toList(),
       searchString: map['searchString'] ?? '',
