@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:music_app/features/genre_details/presentation/screens/genre_details_screen.dart';
-import 'package:music_app/shared/features/music_player/presentation/widgets/mini_music_player_widget.dart';
+import 'package:music_app/shared/features/music_player/presentation/widgets/music_player_controls/widgets/mini_music_player_widget.dart';
 import 'package:music_app/shared/widgets/screen_widget.dart';
 
 import '../../../../shared/features/music_player/presentation/controllers/music_player_controller.dart';
