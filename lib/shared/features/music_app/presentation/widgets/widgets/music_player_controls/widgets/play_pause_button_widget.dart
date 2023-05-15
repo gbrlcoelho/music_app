@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:music_app/core/app/music_app_colors.dart';
 
-import '../../../controllers/music_player_controller.dart';
+import '../../../../controllers/music_player_controller.dart';
 
 enum PlayPauseButtonSize {
   small,

@@ -5,7 +5,7 @@ import 'package:music_app/shared/features/music_app/presentation/controllers/mus
 import 'package:music_app/shared/widgets/image_widget.dart';
 import 'package:music_app/shared/widgets/text_widget.dart';
 
-import 'music_player_controls/widgets/play_pause_button_widget.dart';
+import 'widgets/music_player_controls/widgets/play_pause_button_widget.dart';
 
 class MiniMusicPlayerWidget extends StatelessWidget {
   const MiniMusicPlayerWidget({Key? key}) : super(key: key);
