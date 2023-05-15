@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/instance_manager.dart';
+import 'package:get/get.dart';
 import 'package:music_app/core/app/music_app_colors.dart';
 import 'package:music_app/shared/features/music_player/presentation/controllers/music_player_controller.dart';
 import 'package:music_app/shared/widgets/image_widget.dart';
@@ -34,36 +34,39 @@ class MiniMusicPlayerWidget extends StatelessWidget {
                 horizontal: 25,
                 vertical: 8,
               ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Row(
-                      children: [
-                        ImageWidget(
-                          height: 50,
-                          width: 50,
-                          img:
-                              musicPlayerController.getCurrentPlayingMusic?.img,
-                        ),
-                        const SizedBox(
-                          width: 8,
-                        ),
-                        Expanded(
-                          child: TextWidget.normal(
-                            musicPlayerController
-                                    .getCurrentPlayingMusic?.title ??
-                                'Music',
+              child: Obx(
+                () => Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Row(
+                        children: [
+                          ImageWidget(
+                            height: 50,
+                            width: 50,
+                            img: musicPlayerController
+                                .getCurrentPlayingMusic?.img,
                           ),
-                        )
-                      ],
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          Expanded(
+                            child: TextWidget.normal(
+                              musicPlayerController
+                                      .getCurrentPlayingMusic?.title ??
+                                  'Music',
+                            ),
+                          )
+                        ],
+                      ),
                     ),
-                  ),
-                  PlayPauseButtonWidget(
-                    musicUrl: musicPlayerController.getCurrentPlayingMusic?.url,
-                    playPauseButtonSize: PlayPauseButtonSize.small,
-                  ),
-                ],
+                    PlayPauseButtonWidget(
+                      musicUrl:
+                          musicPlayerController.getCurrentPlayingMusic?.url,
+                      playPauseButtonSize: PlayPauseButtonSize.small,
+                    ),
+                  ],
+                ),
               ),
             ),
             StreamBuilder(
