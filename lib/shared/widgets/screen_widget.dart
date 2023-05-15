@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/core/app/music_app_colors.dart';
-import 'package:music_app/shared/features/music_player/presentation/widgets/music_player_controls/widgets/circular_progress_indicator_widget.dart';
 
+import '../features/music_app/presentation/widgets/circular_progress_indicator_widget.dart';
 import 'app_music_error_widget.dart';
 import 'text_widget.dart';
 

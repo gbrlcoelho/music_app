@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:music_app/core/mixins/screen_loading_and_error_mixin.dart';
-import 'package:music_app/shared/features/music_player/presentation/controllers/music_player_controller.dart';
+import 'package:music_app/shared/features/music_app/presentation/controllers/music_player_controller.dart';
 import 'package:music_app/shared/models/genre_model.dart';
 import 'package:music_app/shared/models/music_model.dart';
 

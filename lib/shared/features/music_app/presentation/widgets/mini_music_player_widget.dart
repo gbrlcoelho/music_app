@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:music_app/core/app/music_app_colors.dart';
-import 'package:music_app/shared/features/music_player/presentation/controllers/music_player_controller.dart';
+import 'package:music_app/shared/features/music_app/presentation/controllers/music_player_controller.dart';
 import 'package:music_app/shared/widgets/image_widget.dart';
 import 'package:music_app/shared/widgets/text_widget.dart';
 
-import 'play_pause_button_widget.dart';
+import 'music_player_controls/widgets/play_pause_button_widget.dart';
 
 class MiniMusicPlayerWidget extends StatelessWidget {
   const MiniMusicPlayerWidget({Key? key}) : super(key: key);
